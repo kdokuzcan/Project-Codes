@@ -1,7 +1,7 @@
 class Item:
 	def __init__(self, Name, Id, Price):
 		self.Name = Name
-		self.Id = Id #This is ITEM ID
+		self.Id = Id 
 		self.Price = Price
 		
 	def getName(self):
@@ -14,11 +14,11 @@ class Item:
 		return self.Price
 		
 	def __str__(self):
-		return str(self.Name) + " " + str(self.Id) + " " + str(self.Price) #returns "socks 12345 $4.56"
+		return str(self.Name) + " " + str(self.Id) + " " + str(self.Price)
 
 class Shipment:
 	def __init__(self, Id):
-		self.Id = Id #This is SHIPMENT ID
+		self.Id = Id
 		self.items = []
 	
 	def getId(self):
@@ -28,7 +28,7 @@ class Shipment:
 		return self.items
 	
 	def addItem(self, Item):
-		self.items.append(Item)	#[socks 12345 $4.56]
+		self.items.append(Item)	
 	
 	def __str__(self):
 		shipment = str(self.Id) + ":" + " ["
@@ -40,7 +40,7 @@ class Shipment:
 			ctr += 1
 		shipment += "]"
 		#print shipment
-		return shipment #returns Id: [list of items]  ex. 55555: [socks 12345 $4.56]. This only has 1 shipment
+		return shipment 
 class ItemException(Exception):
 	def __init__(self, message):
 		self.message = message
@@ -72,7 +72,7 @@ def main(list1, list2):
 	ctr1 = 0
 	while ctr1 < len(list1):
 		if list1[ctr1][:-1].isdigit() == True:
-			ship = Shipment(list1[ctr1][:-1]) #This calls the Shipment constructor 
+			ship = Shipment(list1[ctr1][:-1]) 
 			truck.append(ship)
 			ctr1 += 1
 			
